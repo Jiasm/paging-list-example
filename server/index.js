@@ -52,14 +52,28 @@ app.listen(12306, _ => {
   console.log(`server run as: http://127.0.0.1:12306`)
 })
 
+/**
+ * 模拟分页
+ * @param {Array}  items
+ * @param {Number} start
+ * @param {Number} end
+ */
 function sliceItems(items, start, end) {
   return items.slice(start, end)
 }
 
+/**
+ * 过滤掉被删除的items
+ * @param {Array} items
+ */
 function filterItems(items) {
   return items.filter(_ => _)
 }
 
+/**
+ * 移除某些元素
+ * @param {Array|Number} items
+ */
 function removeItems(items) {
   if (Array.isArray(items)) {
     items.forEach(removeItems)
